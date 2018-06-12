@@ -32,10 +32,11 @@ if (!is_null($events['events'])) {
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // กำหนดให้ cURL คืนค่าผลลัพท์
 					$response = curl_exec($ch); // ประมวลผล cURL
 					curl_close($ch); // ปิดการใช้งาน cURL
+					$text1 = $response['fullname'];
 					// echo $response; // แสดงผลการทำงาน
 					$messages = [
 						'type' => 'text',
-						'text' => $response['fullname'];
+						'text' => $text1
 					];
 				} else {
 					$messages = [
