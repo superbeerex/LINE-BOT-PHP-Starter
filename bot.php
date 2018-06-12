@@ -22,8 +22,12 @@ if (!is_null($events['events'])) {
 			if ($text == "hello") {
 				$messages = [
 					'type' => 'text',
+<<<<<<< HEAD
 					'text' => "สวัสดีคุณ User: $user_token",
 					'text' => $text
+=======
+					'text' => "สวัสดีคุณ User: $user_token"
+>>>>>>> a23c3f73c76042a59681273ecb2e95e59490685e
 				];
 			} else {
 				$messages = [
