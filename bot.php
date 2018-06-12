@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			if (is_numeric($text)){
 				$size = strlen($text);
 				if ($size == 13) {
-					$url = 'https://bcca.thaijobjob.com/201806/line/search.php'; // กำหนด URl
+					$url = 'https://bcca.thaijobjob.com/201806/line/select.php'; // กำหนด URl
 					$request = 'cus_id='.$text.''; // กำหนด HTTP Request โดยระบุ username=guest และ password=เguest (รูปแบบเหมือนการส่งค่า $_GET แต่ข้างหน้าข้อความไม่มีเครื่องหมาย ?)
 					$ch = curl_init(); // เริ่มต้นใช้งาน cURL
 					curl_setopt($ch, CURLOPT_URL, $url); // กำหนดค่า URL
@@ -32,11 +32,10 @@ if (!is_null($events['events'])) {
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // กำหนดให้ cURL คืนค่าผลลัพท์
 					$response = curl_exec($ch); // ประมวลผล cURL
 					curl_close($ch); // ปิดการใช้งาน cURL
-					$text1 = $response['fullname'];
 					// echo $response; // แสดงผลการทำงาน
 					$messages = [
 						'type' => 'text',
-						'text' => $text1
+						'text' => $response
 					];
 				} else {
 					$messages = [
