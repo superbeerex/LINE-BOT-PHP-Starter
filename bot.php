@@ -13,6 +13,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
+			$user_token = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -21,7 +22,8 @@ if (!is_null($events['events'])) {
 			if ($text == "hello") {
 				$messages = [
 					'type' => 'text',
-					'text' => "สวัสดี SuPeRbEeR"
+					'text' => "สวัสดีคุณ User: $user_token",
+					'text' => $text
 				];
 			} else {
 				$messages = [
