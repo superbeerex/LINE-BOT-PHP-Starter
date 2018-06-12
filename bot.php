@@ -19,18 +19,25 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			// Build message to reply back
-			if ($text == "hello") {
-				$messages = [
-					'type' => 'text',
-					'text' => "สวัสดีคุณ user: $user_token",
-					'text' => $text
-				];
+			if (is_numeric($text)){
+				$size = strlen($text);
+				if ($size == 13) {
+					$messages = [
+						'type' => 'text',
+						'text' => "สวัสดีคุณ user: $user_token"
+					];
+				} else {
+					$messages = [
+						'type' => 'text',
+						'text' => "กรุณากรอกเลขบัตรประชาชน 13 หลัก"
+					];
+				}
 			} else {
 				$messages = [
 					'type' => 'text',
-					'text' => $text
+					'text' => "กรุณากรอกเลขบัตรประชาชน 13 หลัก"
 				];
-			}
+      }
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
