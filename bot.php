@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 					// echo $response; // แสดงผลการทำงาน
 					$messages = [
 						'type' => 'text',
-						'text' => $response
+						'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
 					];
 				} else {
 					$messages = [
