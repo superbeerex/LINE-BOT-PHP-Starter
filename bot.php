@@ -21,10 +21,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			if (is_numeric($text)){
 				$size = strlen($text);
-				if ($size == 10) {
-					$url = 'https://bcca.thaijobjob.com/201806/line/sendsmsConfirm.php'; // กำหนด URl
-					// $url = 'https://bcca.thaijobjob.com/201806/line/select.php'; // กำหนด URl
-					$request = 'TelMobile='.$text.''; // กำหนด HTTP Request โดยระบุ username=guest และ password=เguest (รูปแบบเหมือนการส่งค่า $_GET แต่ข้างหน้าข้อความไม่มีเครื่องหมาย ?)
+				if ($size == 13) {
+					$url = 'https://bcca.thaijobjob.com/201806/line/select.php'; // กำหนด URl
+					$request = 'cus_id='.$text.''; // กำหนด HTTP Request โดยระบุ username=guest และ password=เguest (รูปแบบเหมือนการส่งค่า $_GET แต่ข้างหน้าข้อความไม่มีเครื่องหมาย ?)
 					$ch = curl_init(); // เริ่มต้นใช้งาน cURL
 					curl_setopt($ch, CURLOPT_URL, $url); // กำหนดค่า URL
 					curl_setopt($ch, CURLOPT_POST, 1); // กำหนดรูปแบบการส่งข้อมูลเป็นแบบ $_POST
@@ -36,8 +35,7 @@ if (!is_null($events['events'])) {
 					// echo $response; // แสดงผลการทำงาน
 					$messages = [
 						'type' => 'text',
-						// 'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
-						'text' => $response
+						'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
 					];
 				} else {
 					$messages = [
