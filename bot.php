@@ -32,10 +32,15 @@ if (!is_null($events['events'])) {
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // กำหนดให้ cURL คืนค่าผลลัพท์
 					$response = curl_exec($ch); // ประมวลผล cURL
 					curl_close($ch); // ปิดการใช้งาน cURL
+
 					// echo $response; // แสดงผลการทำงาน
 					$messages = [
 						'type' => 'text',
 						'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
+					];
+					$messages2 = [
+						'type' => 'text',
+						'text' => "test"
 					];
 				} else {
 					$messages = [
@@ -54,7 +59,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => [$messages],[$messages2],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
