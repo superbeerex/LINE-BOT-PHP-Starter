@@ -39,9 +39,9 @@ if (!is_null($events['events'])) {
 					// 	'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
 					// ];
 					$messages2 = [
-						'type'=> 'sticker',
-  'packageId' => '1',
-  'stickerId' => '1'
+						"type": "sticker",
+  "packageId": "1",
+  "stickerId": "1"
 
 
 					  // "template" => {
