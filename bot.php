@@ -39,8 +39,11 @@ if (!is_null($events['events'])) {
 					// 	'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
 					// ];
 					$messages2 = [
-						'type' => 'text',
-							'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
+						'type' => 'image',
+        		'ur' => 'https://www.linefriends.com/content/banner/201804/3b5364c97c2d4a26988f85acdc78514e.jpg',
+        		'size' => 'full',
+        		'aspectRatio' => '16:9',
+        		'aspectMode' => 'cover'
 
 					  // "template" => {
 					  //     "type" => "confirm",
