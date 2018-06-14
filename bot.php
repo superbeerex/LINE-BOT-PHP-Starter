@@ -39,8 +39,24 @@ if (!is_null($events['events'])) {
 						'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
 					];
 					$messages2 = [
-						'type' => 'text',
-						'text' => "test"
+						'type' => 'template',
+  					"altText": "this is a confirm template",
+					  "template" => {
+					      "type" => "confirm",
+					      "text" => "Are you sure?",
+					      "actions" => [
+					          {
+					            "type" => "message",
+					            "label" => "Yes",
+					            "text" => "yes"
+					          },
+					          {
+					            "type" => "message",
+					            "label" => "No",
+					            "text" => "no"
+					          }
+					      ]
+					  }
 					];
 				} else {
 					$messages = [
