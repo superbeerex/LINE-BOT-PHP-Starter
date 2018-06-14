@@ -39,9 +39,10 @@ if (!is_null($events['events'])) {
 					// 	'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
 					// ];
 					$messages2 = [
-						"type": "sticker",
-  "packageId": "1",
-  "stickerId": "1"
+						"type" => "image",
+			      "originalContentUrl" => "https://image.winudf.com/v2/image/Y29tLnRqc3VuZy5hcHA4X3NjcmVlbnNob3RzXzRfY2IzMWU2OGQ/screen-4.jpg?h=355&fakeurl=1&type=.jpg",
+			      "previewImageUrl" => "https://image.winudf.com/v2/image/Y29tLnRqc3VuZy5hcHA4X3NjcmVlbnNob3RzXzRfY2IzMWU2OGQ/screen-4.jpg?h=355&fakeurl=1&type=.jpg"
+
 
 
 					  // "template" => {
