@@ -34,13 +34,15 @@ if (!is_null($events['events'])) {
 					curl_close($ch); // ปิดการใช้งาน cURL
 
 					// echo $response; // แสดงผลการทำงาน
-					$messages = [
-						'type' => 'text',
-						'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
-					];
+					// $messages = [
+					// 	'type' => 'text',
+					// 	'text' => "เลขบัตรประจำตัวประชาชน: ".$text."\r\n".$response
+					// ];
 					$messages2 = [
-						'type' => 'template',
-  					"altText" => "this is a confirm template"
+						"id": "325708",
+    "type": "text",
+    "text": "Hello, world!"
+
 					  // "template" => {
 					  //     "type" => "confirm",
 					  //     "text" => "Are you sure?",
@@ -75,7 +77,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages2],
+				'messages' => [$messages2],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
