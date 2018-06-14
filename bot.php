@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 					// ];
 					$messages2 = [
 						'type' => 'image',
-        		'ur' => 'https://www.linefriends.com/content/banner/201804/3b5364c97c2d4a26988f85acdc78514e.jpg',
+        		'url' => 'https://www.linefriends.com/content/banner/201804/3b5364c97c2d4a26988f85acdc78514e.jpg',
         		'size' => 'full',
         		'aspectRatio' => '16:9',
         		'aspectMode' => 'cover'
